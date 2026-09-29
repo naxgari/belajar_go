@@ -1,0 +1,30 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to My Website</title>
+    </head>    
+
+    <body>
+        <h3>{{.Title}}</h3>
+        <ol>
+            {{range $k, $v := .Data}}
+                <li>{{$v}}</li>
+            {{end}}
+        </ol>
+
+        <h3>Produk</h3>
+        <ol>
+            {{range .Produk}}
+
+                <li>{{.Name}}, harga: {{rupiah .Price}}, max_loop: {{$.MaxLoop}}</li>//dolar digunakan untuk mengakses data diatasnya
+            {{end}}
+        </ol>
+        {{if and (gt .MaxLoop 0) (lt .MaxLoop 10)}}
+            <p>Max Loop > 0 dan kurang dari 10</p>
+        {{else}}
+            <p>Max Loop <= 0 atau lebih dari 10</p>
+        {{end}}
+    </body>
+</html>
+{{end}}

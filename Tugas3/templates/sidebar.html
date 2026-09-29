@@ -1,0 +1,13 @@
+{{define "sidebar"}}
+<aside class="sidebar">
+    <div class="sidebar-brand">Toko Kipas Dewa</div>
+    <ul class="sidebar-menu">
+        <li>
+            <a href="/" class="{{if eq .CurrentPage "profil"}}active{{end}}">Home / Profil</a>
+        </li>
+        <li>
+            <a href="/produk" class="{{if or (eq .CurrentPage "produk") (eq .CurrentPage "produk_form")}}active{{end}}">Produk</a>
+        </li>
+    </ul>
+</aside>
+{{end}}

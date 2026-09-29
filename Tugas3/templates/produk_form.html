@@ -1,0 +1,19 @@
+{{define "produk_form"}}
+<div class="card" style="max-width: 600px;">
+    <h2 style="font-size: 1.1rem; margin-bottom: 20px;">Formulir Tambah Produk</h2>
+    <form action="/produk/simpan" method="POST">
+        <div class="form-group">
+            <label for="nama">Nama Produk</label>
+            <input type="text" id="nama" name="nama" class="form-control" placeholder="Masukkan nama produk..." required>
+        </div>
+        <div class="form-group">
+            <label for="harga">Harga (Rp)</label>
+            <input type="number" id="harga" name="harga" class="form-control" placeholder="Contoh: 15000" min="1" required>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn">Simpan Produk</button>
+            <a href="/produk" class="btn btn-secondary">Batal</a>
+        </div>
+    </form>
+</div>
+{{end}}

@@ -1,0 +1,35 @@
+{{define "produk"}}
+<div class="card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h2 style="font-size: 1.1rem;">Daftar Katalog</h2>
+        <a href="/produk/form" class="btn">+ Tambah Baru</a>
+    </div>
+
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 80px;">ID</th>
+                    <th>Nama Produk</th>
+                    <th style="width: 200px;">Harga (Rp)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{range .Produk}}
+                <tr>
+                    <td>{{.ID}}</td>
+                    <td><strong>{{.Nama}}</strong></td>
+                    <td>Rp {{.Harga}}</td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td colspan="3" style="text-align: center; color: var(--text-muted); padding: 24px;">
+                        Belum ada data produk.
+                    </td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+    </div>
+</div>
+{{end}}

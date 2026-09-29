@@ -1,0 +1,23 @@
+{{define "layout"}}
+{{template "header" .}}
+<div class="layout-container">
+    {{template "sidebar" .}}
+    <div class="main-wrapper">
+        <header class="header-bar">
+            <h1>{{.Title}}</h1>
+        </header>
+        <main class="content">
+            {{if eq .CurrentPage "profil"}}
+                {{template "profil" .}}
+            {{else if eq .CurrentPage "produk"}}
+                {{template "produk" .}}
+            {{else if eq .CurrentPage "produk_form"}}
+                {{template "produk_form" .}}
+            {{end}}
+        </main>
+        {{template "footer" .}}
+    </div>
+</div>
+</body>
+</html>
+{{end}}
